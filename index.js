@@ -5,10 +5,9 @@ let computerDecision = '';
 
 function computerPlay(){
     computerDecision = Math.floor(Math.random() * 3)
-    console.log(DECISIONS[computerDecision]);
 }
 
-function playerTurn(){
+function playerSelection(){
     return null;
 };
 
@@ -19,11 +18,4 @@ function game(){
 
 
 computerPlay();
-computerPlay();
-computerPlay();
-computerPlay();
-computerPlay();
-computerPlay();
-computerPlay();
-computerPlay();
-computerPlay();
+
