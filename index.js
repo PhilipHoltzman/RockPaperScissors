@@ -7,16 +7,41 @@ let playerchoice = '';
 let playerScore = 0;
 let computerScore = 0;
 
+let rockButton = document.getElementById('Rock');
+let paperButton = document.getElementById('Paper');
+let scissorsButton = document.getElementById('Scissors');
 
+rockButton.addEventListener("click", rockChoice);
 
+function rockChoice(){
+    game(0);
+
+};
+
+paperButton.addEventListener("click", paperChoice );
+
+function paperChoice(){
+    game(1);
+
+};
+
+scissorsButton.addEventListener("click", scissorsChoice );
+
+function scissorsChoice(){
+
+    game(2);
+
+};
 
 function computerPlay(){
     computerDecision = Math.floor(Math.random() * 3)
-}
+};
 
 function playerSelection(){
     computerDecision = Math.floor(Math.random() * 3)
+    
 };
+
 
 function scoreCheck(){
     updatePlayerScore(playerScore);
@@ -28,11 +53,9 @@ function scoreCheck(){
         else{
             console.log("Computer won!")
         }
-
-
     }
     else{
-        game();
+        console.log("waiting..")
     }
 }
 
@@ -46,9 +69,9 @@ function updateComputerScore(computerScore){
 }
 
 
-function game(){
+function game(playerchoice){
     computerPlay();
-    playerSelection();
+    //playerSelection();
     
 
     // if player chooses Rock
@@ -134,6 +157,5 @@ function game(){
         
 };
 
-game();
 
 
