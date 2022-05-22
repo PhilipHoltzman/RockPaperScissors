@@ -7,6 +7,9 @@ let playerchoice = '';
 let playerScore = 0;
 let computerScore = 0;
 
+
+
+
 function computerPlay(){
     computerDecision = Math.floor(Math.random() * 3)
 }
@@ -16,6 +19,8 @@ function playerSelection(){
 };
 
 function scoreCheck(){
+    updatePlayerScore(playerScore);
+    updateComputerScore(computerScore);
     if(computerScore >= 5 || playerScore >= 5){
         if(playerScore > computerScore){
             console.log("PLAYER WON!")
@@ -29,6 +34,15 @@ function scoreCheck(){
     else{
         game();
     }
+}
+
+function updatePlayerScore(playerScore){
+    var elem = document.getElementById('playerScore');
+    elem.textContent =  "Player Score: " + playerScore.toString();
+}
+function updateComputerScore(computerScore){
+    var elem2 = document.getElementById('computerScore');
+    elem2.textContent =  "Computer Score: " + computerScore.toString();
 }
 
 
@@ -113,6 +127,9 @@ function game(){
         
 
     };
+    
+    
+    
     scoreCheck();
         
 };
